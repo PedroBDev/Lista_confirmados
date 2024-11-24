@@ -1,3 +1,4 @@
+# Rota para a página principal
 from flask import Flask, render_template, request, redirect, url_for, flash
 import json
 import os
@@ -13,46 +14,46 @@ CAMINHO_ARQUIVO = os.path.join(CAMINHO_DIRETORIO, 'confirmacoes.json')  # Junta 
 if not os.path.exists(CAMINHO_DIRETORIO):
     os.makedirs(CAMINHO_DIRETORIO)
 
-# Rota para a página principal
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def index():
-    return render_template("index.html")
-
-
-@app.route("/agradecimento", methods=['POST'])
-def obrigado():
-    try:
+    if request.method == "POST":
         # Captura os dados do formulário
-        nome = request.form.get('nome')
-        confirmacao = request.form.get('presenca')
+        nome = request.form.get("nome")
+        confirmacao = request.form.get("presenca")
 
         if not nome or not confirmacao:
-            flash("Por favor, preencha todos os campos!", "error")
-            return redirect(url_for('index'))
+            flash("Todos os campos são obrigatórios!", "error")
+            return redirect(url_for("index"))
 
         # Cria o dicionário com os dados
-        dict = {'nome': nome, 'presenca': confirmacao}
+        nova_confirmacao = {"nome": nome, "presenca": confirmacao}
 
-        # Tenta carregar os dados existentes no arquivo JSON
-        if os.path.exists(CAMINHO_ARQUIVO) and os.path.getsize(CAMINHO_ARQUIVO) > 0:
-            with open(CAMINHO_ARQUIVO, 'r') as arquivo:
-                lista_json = json.load(arquivo)
-        else:
-            lista_json = []  # Se o arquivo não existir ou estiver vazio, começa com uma lista vazia
+        # Carrega as confirmações existentes
+        try:
+            with open(CAMINHO_ARQUIVO, "r") as arquivo:
+                lista_confirmacoes = json.load(arquivo)
+        except FileNotFoundError:
+            lista_confirmacoes = []
 
-        # Adiciona o novo dicionário à lista
-        lista_json.append(dict)
+        # Adiciona a nova confirmação
+        lista_confirmacoes.append(nova_confirmacao)
 
-        # Salva a lista de volta no arquivo JSON
-        with open(CAMINHO_ARQUIVO, 'w') as arquivo:
-            json.dump(lista_json, arquivo, indent=2)
+        # Salva a lista atualizada
+        with open(CAMINHO_ARQUIVO, "w") as arquivo:
+            json.dump(lista_confirmacoes, arquivo, indent=2)
 
+        # Exibe uma mensagem de sucesso
         flash("Sua confirmação foi registrada com sucesso!", "success")
-        return redirect(url_for('obrigado_page'))
 
-    except Exception as e:
-        flash(f"Ocorreu um erro ao processar sua confirmação: {str(e)}", "error")
-        return redirect(url_for('index'))
+        # Redireciona para a página de agradecimento
+        return redirect(url_for("obrigado"))
+
+    return render_template("index.html")
+
+@app.route("/agradecimento", methods=["POST"])
+def obrigado():
+    return render_template("obrigado.html")
+
 
 
 @app.route('/lista')
@@ -75,4 +76,5 @@ def lista():
 
 # Inicializa o aplicativo
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.getenv('PORT', '5000'))
+    app.run(host='0.0.0.0', port = port)
