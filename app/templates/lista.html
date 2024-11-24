@@ -19,6 +19,7 @@
                 <tr>
                     <th>Nome</th>
                     <th>Presença</th>
+                    <th>Quantidade de Senhas</th>  <!-- Adicionando o título da coluna -->
                 </tr>
             </thead>
             <tbody>
@@ -26,6 +27,7 @@
                 <tr>
                     <td>{{ confirmacao['nome'] }}</td>
                     <td>{{ confirmacao['presenca'] }}</td>
+                    <td>{{ confirmacao['quantidade'] }}</td>  <!-- Correção do fechamento da tag <td> -->
                 </tr>
                 {% endfor %}
             </tbody>
