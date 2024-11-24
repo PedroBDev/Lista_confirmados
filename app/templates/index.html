@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação de Presença</title>
+    <link rel="stylesheet" href="/static/css/estilos.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Cabeçalho -->
+        <header>
+            <div class="hero">
+                <img src="/static/images/casal.jpg" alt="Foto do Casal" class="foto-casal">
+                <div class="hero-text">
+                    <h1>Nosso Casamento</h1>
+                    <p>Estamos ansiosos para celebrar com você! Confirme sua presença.</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Formulário -->
+        <section class="form-section">
+            <form action="/agradecimento" method="POST" class="formulario">
+                <div class="campo">
+                    <label for="nome">Seu Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+                </div>
+
+                <div class="campo">
+                    <label for="presenca">Você poderá comparecer?</label>
+                    <select id="presenca" name="presenca" required>
+                        <option value="">Selecione...</option>
+                        <option value="sim">Sim, estarei lá!</option>
+                        <option value="nao">Infelizmente, não poderei ir.</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="mensagem">Deixe uma mensagem para nós (opcional)</label>
+                    <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem..."></textarea>
+                </div>
+
+                <button type="submit" class="botao">Enviar</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html>
