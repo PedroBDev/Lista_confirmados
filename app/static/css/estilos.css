@@ -123,35 +123,48 @@ header {
 /* Ajustes para dispositivos móveis */
 @media screen and (max-width: 768px) {
     .hero {
+        display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
+        padding: 0 10px; /* Adiciona um pequeno espaçamento nas laterais */
     }
 
     .foto-casal {
-        max-width: 100%;
-        margin-bottom: 20px;
+        width: 100%; /* Faz a imagem ocupar toda a largura da tela */
+        height: auto; /* Mantém a proporção da imagem */
+        object-fit: cover; /* Garante que a imagem cubra a área sem distorção */
+        margin-bottom: 20px; /* Adiciona um espaçamento abaixo da imagem */
     }
 
     .hero-text h1 {
-        font-size: 2rem;
-    }
-
-    .hero-text p {
-        font-size: 1rem;
-        margin-top: 10px;
+        font-size: 2rem; /* Ajusta o tamanho da fonte para dispositivos móveis */
+        margin-top: 20px; /* Adiciona um espaçamento entre a imagem e o título */
     }
 
     .formulario {
+        display: flex;
+        flex-direction: column;
         align-items: center;
+        padding: 0 10px; /* Adiciona um pequeno espaçamento nas laterais do formulário */
+    }
+
+    .campo {
+        width: 100%;
+        margin-bottom: 15px; /* Espaçamento entre os campos */
     }
 
     .campo input, .campo select {
-        width: 100%;
+        width: 100%; /* Garante que os campos ocupem toda a largura disponível */
+        padding: 10px; /* Adiciona espaçamento interno nos campos */
+        font-size: 1rem; /* Ajusta o tamanho da fonte para o input */
     }
 
     .botao {
-        width: 100%;
+        width: 100%; /* O botão ocupa toda a largura */
+        padding: 10px; /* Adiciona espaçamento interno no botão */
+        font-size: 1.2rem; /* Ajusta o tamanho da fonte no botão */
+        margin-top: 20px; /* Adiciona um espaço acima do botão */
     }
 }
 
