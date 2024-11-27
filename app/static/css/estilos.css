@@ -132,8 +132,8 @@ header {
 
     .foto-casal {
         width: 100%; /* Faz a imagem ocupar toda a largura da tela */
-        height: auto; /* Mantém a proporção da imagem */
-        object-fit: cover; /* Garante que a imagem cubra a área sem distorção */
+        height: auto; /* A altura é ajustada automaticamente para manter a proporção */
+        max-height: 300px; /* Limita a altura máxima para não ficar muito grande */
         margin-bottom: 20px; /* Adiciona um espaçamento abaixo da imagem */
     }
 
@@ -167,6 +167,7 @@ header {
         margin-top: 20px; /* Adiciona um espaço acima do botão */
     }
 }
+
 
 /* Página de agradecimento */
 .mensagem {
