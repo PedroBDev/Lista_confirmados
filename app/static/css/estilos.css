@@ -119,7 +119,6 @@ header {
     background-color: #4db8ff;
     transform: scale(1.05);
 }
-
 /* Ajustes para dispositivos móveis */
 @media screen and (max-width: 768px) {
     .hero {
@@ -130,18 +129,22 @@ header {
         padding: 0 10px; /* Adiciona um pequeno espaçamento nas laterais */
     }
 
+    /* Ajuste da imagem */
     .foto-casal {
         width: 100%; /* Faz a imagem ocupar toda a largura da tela */
-        height: auto; /* A altura é ajustada automaticamente para manter a proporção */
-        max-height: 250px; /* Limita a altura máxima para não ficar muito grande */
+        height: auto; /* Mantém a proporção da imagem */
+        max-height: 400px; /* Limita a altura da imagem, mas de forma flexível */
+        object-fit: contain; /* Ajuste para a imagem ser contida sem corte */
         margin-bottom: 10px; /* Reduz o espaçamento entre a imagem e o título */
     }
 
+    /* Ajuste no título */
     .hero-text h1 {
-        font-size: 1.5rem; /* Diminuir o tamanho do texto */
+        font-size: 1.5rem; /* Diminui o tamanho do texto */
         margin-top: 10px; /* Diminui o espaço entre a imagem e o título */
     }
 
+    /* Ajuste no formulário */
     .formulario {
         display: flex;
         flex-direction: column;
@@ -167,6 +170,7 @@ header {
         margin-top: 20px; /* Adiciona um espaço acima do botão */
     }
 }
+
 
 
 /* Página de agradecimento */
