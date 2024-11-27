@@ -44,26 +44,15 @@ header {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Texto do hero */
 .hero-text {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+    text-align: center; /* Centraliza o texto */
+    margin-top: 20px; /* Espaço acima do título */
 }
 
 .hero-text h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 10px;
+    font-size: 24px; /* Ajuste o tamanho da fonte conforme necessário */
 }
 
-.hero-text p {
-    font-size: 1.2rem;
-    font-weight: 500;
-}
 
 /* Estilizando o formulário */
 .form-section {
