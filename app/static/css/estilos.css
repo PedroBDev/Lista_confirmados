@@ -16,6 +16,8 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 20px; /* Adicionando espaçamento em torno do corpo */
+    overflow: hidden; /* Evita barras de rolagem indesejadas */
 }
 
 /* Container geral */
@@ -42,6 +44,8 @@ header {
     height: auto;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    object-fit: cover; /* Faz a imagem preencher o espaço sem distorção */
+    margin-bottom: 20px; /* Adiciona margem para o título */
 }
 
 .hero-text {
@@ -51,8 +55,8 @@ header {
 
 .hero-text h1 {
     font-size: 24px; /* Ajuste o tamanho da fonte conforme necessário */
+    color: #000; /* Cor preta para o título */
 }
-
 
 /* Estilizando o formulário */
 .form-section {
@@ -63,6 +67,7 @@ header {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
+/* Formulário */
 .formulario {
     display: flex;
     flex-direction: column;
@@ -119,14 +124,15 @@ header {
     background-color: #4db8ff;
     transform: scale(1.05);
 }
+
 /* Ajustes para dispositivos móveis */
 @media screen and (max-width: 768px) {
-    .hero {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 0 10px; /* Adiciona um pequeno espaçamento nas laterais */
+    body {
+        padding: 10px; /* Reduzindo o padding no corpo para dispositivos menores */
+    }
+
+    .container {
+        padding: 15px; /* Menos padding para economizar espaço */
     }
 
     /* Ajuste da imagem */
@@ -134,15 +140,37 @@ header {
         width: 100%; /* Faz a imagem ocupar toda a largura da tela */
         height: auto; /* Mantém a proporção da imagem */
         max-height: 400px; /* Limita a altura da imagem, mas de forma flexível */
-        object-fit: contain; /* Ajuste para a imagem ser contida sem corte */
-        margin-bottom: 10px; /* Reduz o espaçamento entre a imagem e o título */
+        object-fit: cover; /* Ajuste para a imagem cobrir o espaço de forma eficiente */
+        margin-bottom: 15px; /* Espaço reduzido entre a imagem e o título */
     }
 
     /* Ajuste no título */
     .hero-text h1 {
         font-size: 1.5rem; /* Diminui o tamanho do texto */
-        margin-top: 10px; /* Diminui o espaço entre a imagem e o título */
+        margin-top: 10px; /* Reduzindo a margem do título */
     }
+
+    .formulario {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px; /* Reduzindo o espaçamento entre os campos */
+        padding: 0 10px; /* Adicionando um pequeno espaçamento nas laterais */
+    }
+
+    .campo input, .campo select, .campo textarea {
+        width: 100%; /* Garante que os campos ocupem toda a largura */
+        font-size: 1rem; /* Ajusta o tamanho da fonte dos campos */
+        padding: 10px; /* Adiciona espaçamento interno */
+    }
+
+    .botao {
+        width: 100%; /* O botão ocupa toda a largura disponível */
+        padding: 12px; /* Menor padding */
+        font-size: 1.1rem; /* Tamanho de fonte ajustado para o botão */
+        margin-top: 20px; /* Espaço acima do botão */
+    }
+}
 
     /* Ajuste no formulário */
     .formulario {
