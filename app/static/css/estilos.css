@@ -133,13 +133,13 @@ header {
     .foto-casal {
         width: 100%; /* Faz a imagem ocupar toda a largura da tela */
         height: auto; /* A altura é ajustada automaticamente para manter a proporção */
-        max-height: 300px; /* Limita a altura máxima para não ficar muito grande */
-        margin-bottom: 20px; /* Adiciona um espaçamento abaixo da imagem */
+        max-height: 250px; /* Limita a altura máxima para não ficar muito grande */
+        margin-bottom: 10px; /* Reduz o espaçamento entre a imagem e o título */
     }
 
     .hero-text h1 {
-        font-size: 2rem; /* Ajusta o tamanho da fonte para dispositivos móveis */
-        margin-top: 20px; /* Adiciona um espaçamento entre a imagem e o título */
+        font-size: 1.5rem; /* Diminuir o tamanho do texto */
+        margin-top: 10px; /* Diminui o espaço entre a imagem e o título */
     }
 
     .formulario {
