@@ -131,6 +131,41 @@ header {
     transform: scale(1.05);
 }
 
+/* Ajustes para dispositivos móveis */
+@media screen and (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .foto-casal {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    .formulario {
+        align-items: center;
+    }
+
+    .campo input, .campo select {
+        width: 100%;
+    }
+
+    .botao {
+        width: 100%;
+    }
+}
+
 /* Página de agradecimento */
 .mensagem {
     margin-top: 30px;
