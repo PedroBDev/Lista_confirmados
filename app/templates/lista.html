@@ -1,42 +1,50 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Confirmados</title>
+    <title>Lista de Confirmações</title>
+    <!-- Link para o arquivo CSS -->
     <link rel="stylesheet" href="/static/css/estilos.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Lista de Confirmados</h1>
-            <p>Total de confirmados: <strong>{{ total_confirmados }}</strong></p>
+            <h1>Lista de Confirmações de Presença</h1>
+            <h2>Total de Senhas para os Confirmados: {{ total_senhas }}</h2>
         </header>
 
-        {% if lista %}
-        <table class="lista-confirmados">
+        <!-- Tabela com as confirmações -->
+        <table class="tabela">
             <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Nome</th>
                     <th>Presença</th>
-                    <th>Quantidade de Senhas</th>  <!-- Adicionando o título da coluna -->
+                    <th>Senha</th>
                 </tr>
             </thead>
             <tbody>
-                {% for confirmacao in lista %}
+                {% for confirmacao in confirmacoes %}
                 <tr>
-                    <td>{{ confirmacao['nome'] }}</td>
-                    <td>{{ confirmacao['presenca'] }}</td>
-                    <td>{{ confirmacao['quantidade'] }}</td>  <!-- Correção do fechamento da tag <td> -->
+                    <td>{{ confirmacao.id }}</td>
+                    <td>{{ confirmacao.nome }}</td>
+                    <td>{{ confirmacao.presenca }}</td>
+                    <td>{{ confirmacao.senha }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="4">Nenhuma confirmação encontrada.</td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
-        {% else %}
-        <p>Ainda não há confirmações registradas.</p>
-        {% endif %}
 
-        <a href="/" class="botao">Voltar ao Início</a>
+        <!-- Botão de voltar -->
+        <a href="/" class="botao">Voltar</a>
     </div>
 </body>
 </html>
+
+
+

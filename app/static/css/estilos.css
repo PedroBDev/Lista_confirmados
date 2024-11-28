@@ -207,29 +207,6 @@ header {
 }
 
 
-/* Estilo da tabela */
-.tabela {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
-
-.tabela th,
-.tabela td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: left;
-}
-
-.tabela th {
-    background-color: #4682b4;
-    color: white;
-}
-
-.tabela tr:nth-child(even) {
-    background-color: #f0f8ff;
-}
-
 /* Reset de margens e paddings */
 * {
     margin: 0;
@@ -263,6 +240,12 @@ h1 {
     color: #2c3e50;
 }
 
+h2 {
+    font-size: 24px;
+    color: #2980b9;
+    margin-top: 20px;
+}
+
 p {
     font-size: 18px;
     color: #7f8c8d;
@@ -272,31 +255,30 @@ strong {
     color: #2980b9;
 }
 
-.lista-confirmados {
+/* Estilo da tabela */
+.tabela {
     width: 100%;
-    margin-top: 20px;
     border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.tabela th,
+.tabela td {
+    border: 1px solid #ccc;
+    padding: 10px;
     text-align: left;
 }
 
-.lista-confirmados th, .lista-confirmados td {
-    padding: 12px;
-    border: 1px solid #ddd;
-}
-
-.lista-confirmados th {
+.tabela th {
     background-color: #2980b9;
     color: white;
 }
 
-.lista-confirmados td {
-    background-color: #f9f9f9;
-}
-
-.lista-confirmados tr:nth-child(even) td {
+.tabela tr:nth-child(even) {
     background-color: #ecf0f1;
 }
 
+/* Estilo do botão */
 .botao {
     display: inline-block;
     margin-top: 20px;
@@ -312,4 +294,5 @@ strong {
 .botao:hover {
     background-color: #3498db;
 }
+
 

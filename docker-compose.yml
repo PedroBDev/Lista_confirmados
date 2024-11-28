@@ -1,0 +1,25 @@
+version: '3.9'
+services:
+  app:
+    build: .
+    env_file:
+      - .env
+  mysql_206:
+    container_name: mysql_206
+    hostname: mysql_206
+    image: mysql:8
+    restart: always
+    command:
+      - --bind-address=0.0.0.0
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --innodb_force_recovery=0
+    volumes:
+      - mysql_206_data:/var/lib/mysql
+    ports:
+      - "3306:3306"  # Mapeia a porta 3306 do host para o contêiner
+    environment:
+
+      TZ: America/Sao_Paulo
+volumes:
+  mysql_206_data:
